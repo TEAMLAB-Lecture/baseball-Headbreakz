@@ -237,7 +237,7 @@ def is_yes(one_more_input):
 
     result = False
     copy_one_more_input = one_more_input.lower()
-    if copy_one_more_input == 'y' or one_more_input =='yes':
+    if copy_one_more_input == 'y' or copy_one_more_input =='yes':
         result = True
     # ==================================
     return result
@@ -293,7 +293,7 @@ def main():
         while answer != [3,0]:
             user_input_number = input('Input guess number:')
             if user_input_number == '0' :
-                check_start_game == True
+                check_start_game = True
                 check_end_game = True
                 break
             elif is_validated_number(user_input_number) == True and user_input_number.isdigit() :
