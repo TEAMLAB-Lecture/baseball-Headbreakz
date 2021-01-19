@@ -59,11 +59,12 @@ def is_between_100_and_999(user_input_number):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    check_number = int(user_input_number)
     result = False
-    if check_number >=100 or check_number < 1000 :
-        result = True
-    # ==================================
+    if user_input_number.isdigit():
+        check_number = int(user_input_number)        
+        if check_number >=100 and check_number < 1000 :
+            result = True
+        # ==================================
     return result
 
 
@@ -89,13 +90,16 @@ def is_duplicated_number(three_digit):
     # '''
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
-    check_list = []
+    
+    
     result = True
-    for i in three_digit :
-        if i not in check_list:
-            check_list.append(i)
-    if len(check_list) == 3 :
-        result = False
+    if three_digit.isdigit():
+        check_list = []            
+        for i in three_digit :
+            if i not in check_list:
+                check_list.append(i)
+        if len(check_list) == 3 :
+            result = False
     # ==================================
     return result
 
@@ -292,7 +296,7 @@ def main():
                 check_start_game == True
                 check_end_game = True
                 break
-            elif is_validated_number(user_input_number) == True :
+            elif is_validated_number(user_input_number) == True and user_input_number.isdigit() :
                 answer = get_strikes_or_ball(user_input_number, random_number)
                 print(f"Strikes : {answer[0]}, Balls : {answer[1]}")
             else :
